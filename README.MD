@@ -7,6 +7,10 @@ Web Assembly framework written in java, compiles to web assembly, html, javascri
 
 [Hello World/Example here](https://github.com/Eskerepvp/JektHelloWorld)
 
+# Documentation
+
+Doucmentation is at the wiki.
+
 # TODO
 
 Inline css but less wack.
