@@ -193,7 +193,7 @@ public class Elements {
         }
 
         else if (wrapMode.equals(WrapMode.None)) {
-            routeText = "'<a href=\""+ partName + ".html" + "\">" + text + "</a>";
+            routeText = "<a href=\""+ partName + ".html" + "\">" + text + "</a>";
         }
 
         return routeText;
