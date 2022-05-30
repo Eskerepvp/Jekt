@@ -10,7 +10,6 @@ buildscript {
 
 
 plugins {
-    id 'java-gradle-plugin'
     id 'java'
 }
 
@@ -25,7 +24,6 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation(gradleApi())
     // https://mvnrepository.com/artifact/de.inetsoftware/jwebassembly-api
     implementation 'com.github.i-net-software:jwebassembly-api:master-SNAPSHOT'
     // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
@@ -34,6 +32,7 @@ dependencies {
 }
 sourceSets {
     main.java.srcDirs += 'src/main/java'
+
 }
 
 wasm {
@@ -41,8 +40,4 @@ wasm {
 
     debugNames = true
 }
-
-
-
-
 
