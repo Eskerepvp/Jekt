@@ -46,11 +46,19 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void h1(String text, String id) {
+        jeh(id, "'<h1 id = \"" + id + "\"" + ">" + text +"</h1>'");
+    }
+
     public static void h2(String text) {
         HTMLElement element = Jekt.document.createElement("h2");
         Text innerText = Jekt.document.createTextNode(text);
         element.appendChild(innerText);
         Jekt.document.body().appendChild(element);
+    }
+
+    public static void h2(String text, String id) {
+        jeh(id, "'<h2 id = \"" + id + "\"" + ">" + text +"</h2>'");
     }
 
     public static void h3(String text) {
@@ -60,11 +68,19 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void h3(String text, String id) {
+        jeh(id, "'<h3 id = \"" + id + "\"" + ">" + text +"</h3>'");
+    }
+
     public static void h4(String text) {
         HTMLElement element = Jekt.document.createElement("h4");
         Text innerText = Jekt.document.createTextNode(text);
         element.appendChild(innerText);
         Jekt.document.body().appendChild(element);
+    }
+
+    public static void h4(String text, String id) {
+        jeh(id, "'<h4 id = \"" + id + "\"" + ">" + text +"</h4>'");
     }
 
     public static void h5(String text) {
@@ -74,12 +90,19 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void h5(String text, String id) {
+        jeh(id, "'<h5 id = \"" + id + "\"" + ">" + text +"</h5>'");
+    }
 
     public static void h6(String text) {
         HTMLElement element = Jekt.document.createElement("h6");
         Text innerText = Jekt.document.createTextNode(text);
         element.appendChild(innerText);
         Jekt.document.body().appendChild(element);
+    }
+
+    public static void h6(String text, String id) {
+        jeh(id, "'<h6 id = \"" + id + "\"" + ">" + text +"</h6>'");
     }
 
     public static void p(String text) {
@@ -89,6 +112,10 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void p(String text, String id) {
+        jeh(id, "'<p id = \"" + id + "\"" + ">" + text +"</p>'");
+    }
+
     public static void div(String text) {
         HTMLElement element = Jekt.document.createElement("div");
         Text innerText = Jekt.document.createTextNode(text);
@@ -96,12 +123,9 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
-    /* TODO public static void div(String id, String text)  {
-        HTMLElement element = document.createElement("element");
-        Text innerText = document.createTextNode(text);
-        element.appendChild( innerText );
-        document.body().appendChild( element );
-    } */
+    public static void div(String text, String id) {
+        jeh(id, "'<div id = \"" + id + "\"" + ">" + text +"</div>'");
+    }
 
     public static void button(String text) {
         HTMLElement element = Jekt.document.createElement("button");
@@ -129,6 +153,10 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void canvas(String text, String id) {
+        jeh(id, "'<canvas id = \"" + id + "\"" + ">" + text +"</canvas>'");
+    }
+
     public static void style(String text) {
         HTMLElement element = Jekt.document.createElement("style");
         Text innerText = Jekt.document.createTextNode(text);
@@ -141,16 +169,34 @@ public class Elements {
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
         if(method) {
-            jeh(name, "'<a href=\""+ partName + ".html" + "\">" + text + "'");
+            jeh(name, "'<a href=\""+ partName + ".html" + "\">" +text + "</a>" + "'");
 
         }
     }
 
-    public static String Link(Class route, String text) {
+    public static String Link(Class route, String text, WrapMode wrapMode) {
+        String routeText = null;
         String wholeName = route.getName();
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
-        return "'<a href=\""+ partName + ".html" + "\">" + text + "'";
+
+        if(wrapMode.equals(WrapMode.BackTick)) {
+            routeText = "`<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "`";
+        }
+
+        else if (wrapMode.equals(WrapMode.Apostrophe)) {
+            routeText = "'<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "'";
+        }
+
+        else if (wrapMode.equals(WrapMode.Quotes)) {
+            routeText = "\"<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "\"";
+        }
+
+        else if (wrapMode.equals(WrapMode.None)) {
+            routeText = "'<a href=\""+ partName + ".html" + "\">" + text + "</a>";
+        }
+
+        return routeText;
     }
 
     public static String jVoid(WrapMode wrapMode, String wasmFileName, String method) {
