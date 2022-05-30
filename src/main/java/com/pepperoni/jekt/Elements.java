@@ -169,7 +169,7 @@ public class Elements {
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
         if(method) {
-            jeh(name, "'<a href=\""+ partName + ".html" + "\">" + text + "'");
+            jeh(name, "'<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "'");
 
         }
     }
@@ -178,7 +178,7 @@ public class Elements {
         String wholeName = route.getName();
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
-        return "'<a href=\""+ partName + ".html" + "\">" + text + "'";
+        return "'<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "'";
     }
 
     public static String jVoid(WrapMode wrapMode, String wasmFileName, String method) {
