@@ -169,34 +169,16 @@ public class Elements {
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
         if(method) {
-            jeh(name, "'<a href=\""+ partName + ".html" + "\">" +text + "</a>" + "'");
+            jeh(name, "'<a href=\""+ partName + ".html" + "\">" + text + "'");
 
         }
     }
 
-    public static String Link(Class route, String text, WrapMode wrapMode) {
-        String routeText = null;
+    public static String Link(Class route, String text) {
         String wholeName = route.getName();
         int dotPos = wholeName.lastIndexOf('.');
         String partName = wholeName.substring(dotPos == -1 ? 0 : (dotPos + 1), wholeName.length());
-
-        if(wrapMode.equals(WrapMode.BackTick)) {
-            routeText = "`<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "`";
-        }
-
-        else if (wrapMode.equals(WrapMode.Apostrophe)) {
-            routeText = "'<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "'";
-        }
-
-        else if (wrapMode.equals(WrapMode.Quotes)) {
-            routeText = "\"<a href=\""+ partName + ".html" + "\">" + text + "</a>" + "\"";
-        }
-
-        else if (wrapMode.equals(WrapMode.None)) {
-            routeText = "<a href=\""+ partName + ".html" + "\">" + text + "</a>";
-        }
-
-        return routeText;
+        return "'<a href=\""+ partName + ".html" + "\">" + text + "'";
     }
 
     public static String jVoid(WrapMode wrapMode, String wasmFileName, String method) {
