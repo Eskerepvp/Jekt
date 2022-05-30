@@ -110,6 +110,10 @@ public class Elements {
         Jekt.document.body().appendChild(element);
     }
 
+    public static void button(String text, String id) {
+       jeh(id, "'<button id = \"" + id + "\"" + ">" + text +"</button>'");
+    }
+
    /* TODO public static void button(String text, String onClick) {
         HTMLElement element = document.createElement("button");
         Text innerText = document.createTextNode(text);
