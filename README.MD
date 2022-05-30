@@ -26,3 +26,5 @@ Templates.
 Integrate the compile command in this project, don't make the users define it themselves.
 
 Clean the code up, maybe rewrite it in groovy?
+
+Bundle JWebAssembly, and JWebAssembly-API
