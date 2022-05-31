@@ -13,18 +13,22 @@ Doucmentation is at the wiki.
 
 # TODO
 
-Inline css but less wack.
+Inline css but less wack. IMPORTANCE: MEDUIM
 
-Inline javascript but less wack.
+Inline javascript but less wack. IMPORTANCE: MEDUIM
 
-Typescript?
+Typescript? IMPORTANCE: LOW
 
-Inline javascript, but you can load a file.
+Inline javascript, but you can load a file. IMPORTANCE: HIGH
 
-Templates.
+Templates. IMPORTANCE: MEDUIM
 
-Integrate the compile command in this project, don't make the users define it themselves.
+Integrate the compile command in this project, don't make the users define it themselves. IMPORTANCE: HIGH
 
-Clean the code up, maybe rewrite it in groovy?
+Clean the code up, maybe rewrite it in groovy? IMPORTANCE: HIGH
 
-Bundle JWebAssembly, and JWebAssembly-API
+Bundle JWebAssembly, and JWebAssembly-API IMPORTANCE: LOW
+
+Vscode and Inteliji Extension for the .jekt file format, yes i made my own programing langauge. IMPORTANCE: MEDUIM
+
+
